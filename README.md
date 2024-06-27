@@ -43,10 +43,10 @@ During the entire course of the pandemic, one of the main problems that healthca
 
 ## Business Requirements:
 
-- 1 - Predicting Patient Severity: 
+- ### 1 - Predicting Patient Severity: 
     - The primary business requirement is to build a machine learning model that, given a COVID-19 patient's current symptoms, status, and medical history, can predict whether the patient is at high risk of severe illness (requiring intensive care, intubation, etc.) or not.
 
-- 2 - Resource Allocation:
+- ### 2 - Resource Allocation:
     - Based on the predictions, provide actionable insights into how healthcare resources (such as ICU beds, ventilators, etc.) should be allocated to optimize patient outcomes and manage resource scarcity.
 
 ## Hypothesis and how to validate?
