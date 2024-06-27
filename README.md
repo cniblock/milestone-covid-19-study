@@ -33,7 +33,7 @@ Each row represents a patient, and each column contains a patient attribute. The
 |RENAL_CHRONIC|Whether the patient has chronic renal disease|1: Yes; 2: No|
 |TOBACCO|Whether the patient is a tobacco user|1: Yes; 2: No|
 |CLASIFFICATION_FINAL|COVID test results indicating the severity of the disease|1-3: Positive with different degrees; 4+: Negative or inconclusive|
-|ICU|Whether the patient had been admitted to an Intensive Care Unit	1: Yes; 2: No|
+|ICU|Whether the patient had been admitted to an Intensive Care Unit|1: Yes; 2: No|
 
 ## Business Case: Predicting COVID-19 Patient Severity
 
