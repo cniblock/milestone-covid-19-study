@@ -1,34 +1,8 @@
-# ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# COVID-19 Study
+
+![COVID Banner](banner-coronavirus_0.webp)
 
 ## Template Instructions
-
-Welcome,
-
-This is the Code Institute student template for the Heritage Housing project option in Predictive Analytics. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
-
-You can safely delete the Template Instructions section of this README.md file,  and modify the remaining paragraphs for your own project. Please do read the Template Instructions at least once, though! It contains some important information about the IDE and the extensions we use.
-
-## How to use this repo
-
-1. Use this template to create your GitHub project repo
-
-2. Log into the cloud-based IDE with your GitHub account.
-
-3. On your Dashboard, click on the Create button
-
-4. Paste in the URL you copied from GitHub earlier
-
-5. Click Create
-
-6. Wait for the workspace to open. This can take a few minutes.
-
-7. Open a new terminal and `pip3 install -r requirements.txt`
-
-11. Open the jupyter_notebooks directory and click on the notebook you want to open.
-
-12. Click the kernel button and choose Python Environments.
-
-Note that the kernel says Python 3.8.18 as it inherits from the workspace so it will be Python-3.8.18 as installed by our template. To confirm this you can use `! python --version` in a notebook code cell.
 
 ## Cloud IDE Reminders
 
@@ -44,44 +18,49 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 
 ## Dataset Content
 
-* The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
-* The dataset has almost 1.5 thousand rows and represents housing records from Ames, Iowa, indicating house profile (Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built) and its respective sale price for houses built between 1872 and 2010.
+The dataset is sourced from a public repository provided by the Mexican government and hosted on [Kaggle](https://www.kaggle.com/datasets/meirnizri/covid19-dataset). The original dataset contains anonymized patient-related information, including pre-existing conditions, symptoms, and outcomes related to COVID-19.
+Each row represents a patient, and each column contains a patient attribute. The dataset includes information about:
+- Medical Units and Patient Care.
+- Demographics and Health Conditions.
+- Pre-existing Conditions and Symptoms.
+- Clinical Outcomes and Treatments.
 
 |Variable|Meaning|Units|
 |:----|:----|:----|
-|1stFlrSF|First Floor square feet|334 - 4692|
-|2ndFlrSF|Second-floor square feet|0 - 2065|
-|BedroomAbvGr|Bedrooms above grade (does NOT include basement bedrooms)|0 - 8|
-|BsmtExposure|Refers to walkout or garden level walls|Gd: Good Exposure; Av: Average Exposure; Mn: Minimum Exposure; No: No Exposure; None: No Basement|
-|BsmtFinType1|Rating of basement finished area|GLQ: Good Living Quarters; ALQ: Average Living Quarters; BLQ: Below Average Living Quarters; Rec: Average Rec Room; LwQ: Low Quality; Unf: Unfinshed; None: No Basement|
-|BsmtFinSF1|Type 1 finished square feet|0 - 5644|
-|BsmtUnfSF|Unfinished square feet of basement area|0 - 2336|
-|TotalBsmtSF|Total square feet of basement area|0 - 6110|
-|GarageArea|Size of garage in square feet|0 - 1418|
-|GarageFinish|Interior finish of the garage|Fin: Finished; RFn: Rough Finished; Unf: Unfinished; None: No Garage|
-|GarageYrBlt|Year garage was built|1900 - 2010|
-|GrLivArea|Above grade (ground) living area square feet|334 - 5642|
-|KitchenQual|Kitchen quality|Ex: Excellent; Gd: Good; TA: Typical/Average; Fa: Fair; Po: Poor|
-|LotArea| Lot size in square feet|1300 - 215245|
-|LotFrontage| Linear feet of street connected to property|21 - 313|
-|MasVnrArea|Masonry veneer area in square feet|0 - 1600|
-|EnclosedPorch|Enclosed porch area in square feet|0 - 286|
-|OpenPorchSF|Open porch area in square feet|0 - 547|
-|OverallCond|Rates the overall condition of the house|10: Very Excellent; 9: Excellent; 8: Very Good; 7: Good; 6: Above Average; 5: Average; 4: Below Average; 3: Fair; 2: Poor; 1: Very Poor|
-|OverallQual|Rates the overall material and finish of the house|10: Very Excellent; 9: Excellent; 8: Very Good; 7: Good; 6: Above Average; 5: Average; 4: Below Average; 3: Fair; 2: Poor; 1: Very Poor|
-|WoodDeckSF|Wood deck area in square feet|0 - 736|
-|YearBuilt|Original construction date|1872 - 2010|
-|YearRemodAdd|Remodel date (same as construction date if no remodelling or additions)|1950 - 2010|
-|SalePrice|Sale Price|34900 - 755000|
+|USMER|Indicates whether the patient treated medical units of the first, second or third level|1: Yes; 2: No|
+|MEDICAL_UNIT|Type of institution of the National Health System that provided the care|1-13 (Institution types)|
+|SEX|Gender of the patient|1: Female; 2: Male|
+|PATIENT_TYPE|Type of care the patient received in the unit|1: Returned home; 2: Hospitalization|
+|DATE_DIED|Date of death, or '9999-99-99' if still alive|Date|
+|INTUBED|Whether the patient was connected to the ventilator|1: Yes; 2: No|
+|PNEUMONIA|Whether the patient already had air sacs inflammation|1: Yes; 2: No|
+|AGE|Age of the patient|Numeric|
+|PREGNANT|Whether the patient is pregnant|1: Yes; 2: No|
+|DIABETES|Whether the patient has diabetes|1: Yes; 2: No|
+|COPD|Whether the patient has chronic obstructive pulmonary disease|1: Yes; 2: No|
+|ASTHMA|Whether the patient has asthma|1: Yes; 2: No|
+|INMSUPR|Whether the patient is immunosuppressed|1: Yes; 2: No|
+|HIPERTENSION|Whether the patient has hypertension|1: Yes; 2: No|
+|OTHER_DISEASE|Whether the patient has other diseases|1: Yes; 2: No|
+|CARDIOVASCULAR|Whether the patient has heart or blood vessel-related diseases|1: Yes; 2: No|
+|OBESITY|Whether the patient is obese|1: Yes; 2: No|
+|RENAL_CHRONIC|Whether the patient has chronic renal disease|1: Yes; 2: No|
+|TOBACCO|Whether the patient is a tobacco user|1: Yes; 2: No|
+|CLASIFFICATION_FINAL|COVID test results indicating the severity of the disease|1-3: Positive with different degrees; 4+: Negative or inconclusive|
+|ICU|Whether the patient had been admitted to an Intensive Care Unit	1: Yes; 2: No|
 
-## Business Requirements
+## Business Case: Predicting COVID-19 Patient Severity
 
-As a good friend, you are requested by your friend, who has received an inheritance from a deceased great-grandfather located in Ames, Iowa, to  help in maximising the sales price for the inherited properties.
+Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus. Most people infected with COVID-19 virus will experience mild to moderate respiratory illness and recover without requiring special treatment. Older people and those with underlying medical problems like cardiovascular disease, diabetes, chronic respiratory disease, and cancer are more likely to develop serious illness.
 
-Although your friend has an excellent understanding of property prices in her own state and residential area, she fears that basing her estimates for property worth on her current knowledge might lead to inaccurate appraisals. What makes a house desirable and valuable where she comes from might not be the same in Ames, Iowa. She found a public dataset with house prices for Ames, Iowa, and will provide you with that.
+During the entire course of the pandemic, one of the main problems that healthcare providers have faced is the shortage of medical resources and a proper plan to efficiently distribute them. In these tough times, being able to predict what kind of resource an individual might require at the time of being tested positive or even before that will be of immense help to the authorities as they would be able to procure and arrange for the resources necessary to save the life of that patient.
 
-* 1 - The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualisations of the correlated variables against the sale price to show that.
-* 2 - The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
+## Business Requirements:
+
+- 1 - Predicting Patient Severity: 
+    - The primary business requirement is to build a machine learning model that, given a COVID-19 patient's current symptoms, status, and medical history, can predict whether the patient is at high risk of severe illness (requiring intensive care, intubation, etc.) or not.
+- 2 - Resource Allocation:
+    - Based on the predictions, provide actionable insights into how healthcare resources (such as ICU beds, ventilators, etc.) should be allocated to optimize patient outcomes and manage resource scarcity.
 
 ## Hypothesis and how to validate?
 
