@@ -51,70 +51,92 @@ During the entire course of the pandemic, one of the main problems that healthca
 
 ## Hypothesis and how to validate?
 
-* Patients with pre-existing health conditions have a higher risk of severe COVID-19 outcomes.
+* 1 - Patients with pre-existing health conditions have a higher risk of severe COVID-19 outcomes.
+    - Validation Method: Conduct a correlation study to identify relationships between pre-existing conditions (such as hypertension, diabetes, and COPD) and patient severity or mortality.
 
-- Validation Method: Conduct a correlation study to identify relationships between pre-existing conditions (such as hypertension, diabetes, and COPD) and patient severity or mortality.
-
-* Older patients are more likely to experience severe COVID-19 symptoms.
-
-- Validation Method: Use age as a variable in correlation and regression analyses to evaluate its predictive power for severe outcomes.
+* 2 - Older patients are more likely to experience severe COVID-19 symptoms.
+    - Validation Method: Use age as a variable in correlation and regression analyses to evaluate its predictive power for severe outcomes.
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 
 * #### Business Requirement 1: Data Visualization and Correlation Study
 
-- Objective: Understand the factors contributing to severe COVID-19 outcomes.
+    - Objective: Understand the factors contributing to severe COVID-19 outcomes.
+        - Inspect data related to patient demographics, health conditions, and outcomes.
+        - Conduct a correlation study using Pearson and Spearman methods to explore relationships between variables and patient severity or mortality.
+        - Visualize key variables against the severity or mortality outcomes to gain insights into potential risk factors.
 
-- Inspect data related to patient demographics, health conditions, and outcomes.
-- Conduct a correlation study using Pearson and Spearman methods to explore relationships between variables and patient severity or mortality.
-- Visualize key variables against the severity or mortality outcomes to gain insights into potential risk factors.
+* #### Business Requirement 2: Classification, Regression, and Data Analysis
 
-* #### Business Requirement 2: Classification, Regression, and Data Analysis 
-
-- Objective: Develop predictive models to assist in healthcare resource allocation and patient management.
-
-- Build a binary classifier to predict whether a patient is at high risk of severe illness, focusing on key factors identified in the correlation study.
-- Develop a regression model to estimate the risk level for a patient based on age and pre-existing conditions. If necessary, adjust the ML task to classification based on the regressor's performance.
-- Analyze model results to provide actionable insights for healthcare providers, including potential interventions to mitigate risk for vulnerable patient groups.
+    - Objective: Develop predictive models to assist in healthcare resource allocation and patient management.
+        - Build a binary classifier to predict whether a patient is at high risk of severe illness, focusing on key factors identified in the correlation study.
+        - Develop a regression model to estimate the risk level for a patient based on age and pre-existing conditions. If necessary, adjust the ML task to classification based on the regressor's performance.
+        - Analyze model results to provide actionable insights for healthcare providers, including potential interventions to mitigate risk for vulnerable patient groups.
 
 ## ML Business Case
 
 ### Predicting COVID-19 Patient Severity
 
-#### Regression Model
+### Regression Model
 
 The objective is to develop a machine learning model to predict the risk level for a COVID-19 patient based on their age and pre-existing health conditions. The model aims to assist healthcare providers in resource allocation and patient management during the pandemic.
 
 * Target Variable: Patient mortality risk (0: No, 1: Yes).
 * Type of Model: Regression model for predicting risk levels.
 
-#### Ideal Outcome
+### Ideal Outcome
 
 The model provides healthcare professionals with insights into the risk levels of COVID-19 patients, aiding in timely interventions and efficient resource allocation.
 
-#### Model Success Metrics
+### Model Success Metrics
 
 * Achieve an R² score of at least 0.7 on both train and test datasets.
 * The model will be considered a failure if it predicts risk levels with more than 50% error in over 30% of the cases. For instance, if the model predicts a risk score of 10 for a patient who actually has a risk score of 2, this would be considered a failure.
 
-#### Output
+### Output
 
 * Prediction Type: Continuous value indicating the risk level of a patient.
 * Usage: Predictions are made in real-time as new patient data becomes available, allowing healthcare providers to make informed decisions on the fly.
 
-#### Current Approach
+### Training Data
 
-There is no existing approach to predict patient risk levels using the provided dataset.
-
-#### Training Data
-
-* Source: The dataset contains over 62,000 patient records sourced from a public repository provided by the Mexican government.
+* Source: The dataset contains over 62,000 (trimmed from over 1 million) patient records sourced from a public repository provided by the Mexican government.
 * Training Data Preparation: The training data is derived from the dataset, excluding the DIED column for features, and using DIED as the target variable.
 
-## Dashboard Design
+## Dashboard Design (Streamlit App User Interface)
 
-* List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items that your dashboard library supports.
-* Eventually, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but eventually you needed to use another plot type)
+### Page 1: Quick Project Summary
+- Quick project summary
+  - Project Terms & Jargon
+  - Describe Project Dataset
+  - State Business Requirements
+
+### Page 2: COVID-19 Risk Analysis
+- Before the analysis, we knew we wanted this page to answer business requirement 1, but we couldn't know in advance which plots would need to be displayed.
+- After data analysis, we agreed with stakeholders that the page will:
+  - State business requirement 1
+  - Checkbox: data inspection on the dataset (display the number of rows and columns in the data, and display the first ten rows of the data)
+  - Display the most correlated variables to patient severity and the conclusions
+  - Checkbox: Individual plots showing the severity levels for each correlated variable
+  - Checkbox: Parallel plot using patient severity and correlated variables
+
+### Page 3: Patient Risk Prediction
+- State business requirement 2
+- Set of widget inputs related to the patient profile. Each set of inputs is related to a given ML task to predict patient severity and resource needs.
+- "Run predictive analysis" button that processes the patient data through our ML pipelines and predicts the risk level of severe illness. It also provides recommendations for resource allocation based on the predicted severity.
+
+### Page 4: Project Hypotheses and Validation
+- Before the analysis, we knew we wanted this page to describe each project hypothesis, the conclusions, and how we validated each. After the data analysis, we can report that:
+- 1 - Older age groups are at higher risk of severe outcomes
+  - Correct. The correlation study and regression analysis support this.
+- 2 - Pre-existing conditions like pneumonia and hypertension increase severity risk.
+  - Supported by data analysis. The insights will be taken to clinical teams for further discussions and investigations.
+
+### Page 5: Model Evaluation and Feature Importance
+- Considerations and conclusions after the pipeline is trained
+- Present ML pipeline steps
+- Feature importance
+- Pipeline performance
 
 ## Unfixed Bugs
 
