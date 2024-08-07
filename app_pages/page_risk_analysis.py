@@ -24,7 +24,7 @@ def page_risk_analysis_body():
             f"* The dataset has {df.shape[0]} rows and {df.shape[1]} columns. "
             f"Here are the first 10 rows of the data:"
         )
-        st.write(df.head(10))
+        st.write(df.head(11))
 
     st.write("---")
 
@@ -37,7 +37,7 @@ def page_risk_analysis_body():
     st.info(
         f"Insights from the correlation study suggest:\n"
         f"* Older age groups are more likely to experience severe outcomes.\n"
-        f"* Patients who are intubated have a higher risk of severe illness or death.\n"
+        f"* Patients who are not intubated have a higher risk of severe illness or death.\n"
         f"* The presence of pneumonia is a strong indicator of severe outcomes.\n"
         f"* Conditions like hypertension and diabetes are associated with increased risk.\n"
     )

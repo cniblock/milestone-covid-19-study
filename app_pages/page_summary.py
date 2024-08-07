@@ -10,6 +10,7 @@ def page_summary_body():
         f"* **Patient**: An individual whose health data is recorded in the dataset, particularly regarding COVID-19.\n"
         f"* **Risk Level**: A classification of a patient's likelihood of severe illness based on symptoms and health history.\n"
         f"* **Intubation**: A medical procedure where a tube is placed into the trachea to assist with breathing.\n"
+        f"* **Pneumonia**: An infection that inflames the air sacs in one or both lungs, which may fill with fluid or pus, causing cough with phlegm or pus, fever, chills, and difficulty breathing.\n"
         f"* **Hypertension**: A condition where the blood pressure in the arteries is persistently elevated.\n"
         f"* **Diabetes**: A group of diseases that result in high blood sugar levels over a prolonged period.\n\n"
         
