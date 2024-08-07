@@ -51,15 +51,65 @@ During the entire course of the pandemic, one of the main problems that healthca
 
 ## Hypothesis and how to validate?
 
-* List here your project hypothesis(es) and how you envision validating it (them).
+* Patients with pre-existing health conditions have a higher risk of severe COVID-19 outcomes.
+
+- Validation Method: Conduct a correlation study to identify relationships between pre-existing conditions (such as hypertension, diabetes, and COPD) and patient severity or mortality.
+
+* Older patients are more likely to experience severe COVID-19 symptoms.
+
+- Validation Method: Use age as a variable in correlation and regression analyses to evaluate its predictive power for severe outcomes.
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 
-* List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
+* #### Business Requirement 1: Data Visualization and Correlation Study
+
+- Objective: Understand the factors contributing to severe COVID-19 outcomes.
+
+- Inspect data related to patient demographics, health conditions, and outcomes.
+- Conduct a correlation study using Pearson and Spearman methods to explore relationships between variables and patient severity or mortality.
+- Visualize key variables against the severity or mortality outcomes to gain insights into potential risk factors.
+
+* #### Business Requirement 2: Classification, Regression, and Data Analysis 
+
+- Objective: Develop predictive models to assist in healthcare resource allocation and patient management.
+
+- Build a binary classifier to predict whether a patient is at high risk of severe illness, focusing on key factors identified in the correlation study.
+- Develop a regression model to estimate the risk level for a patient based on age and pre-existing conditions. If necessary, adjust the ML task to classification based on the regressor's performance.
+- Analyze model results to provide actionable insights for healthcare providers, including potential interventions to mitigate risk for vulnerable patient groups.
 
 ## ML Business Case
 
-* In the previous bullet, you potentially visualised an ML task to answer a business requirement. You should frame the business case using the method we covered in the course.
+### Predicting COVID-19 Patient Severity
+
+#### Regression Model
+
+The objective is to develop a machine learning model to predict the risk level for a COVID-19 patient based on their age and pre-existing health conditions. The model aims to assist healthcare providers in resource allocation and patient management during the pandemic.
+
+* Target Variable: Patient mortality risk (0: No, 1: Yes).
+* Type of Model: Regression model for predicting risk levels.
+
+#### Ideal Outcome
+
+The model provides healthcare professionals with insights into the risk levels of COVID-19 patients, aiding in timely interventions and efficient resource allocation.
+
+#### Model Success Metrics
+
+* Achieve an R² score of at least 0.7 on both train and test datasets.
+* The model will be considered a failure if it predicts risk levels with more than 50% error in over 30% of the cases. For instance, if the model predicts a risk score of 10 for a patient who actually has a risk score of 2, this would be considered a failure.
+
+#### Output
+
+* Prediction Type: Continuous value indicating the risk level of a patient.
+* Usage: Predictions are made in real-time as new patient data becomes available, allowing healthcare providers to make informed decisions on the fly.
+
+#### Current Approach
+
+There is no existing approach to predict patient risk levels using the provided dataset.
+
+#### Training Data
+
+* Source: The dataset contains over 62,000 patient records sourced from a public repository provided by the Mexican government.
+* Training Data Preparation: The training data is derived from the dataset, excluding the DIED column for features, and using DIED as the target variable.
 
 ## Dashboard Design
 
