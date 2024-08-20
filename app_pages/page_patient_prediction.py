@@ -6,7 +6,6 @@ def load_pipeline(base_path):
     return joblib.load(base_path)
 
 def page_patient_prediction_body():
-    st.header("Patient Risk Prediction")
     input_data = get_user_input()
 
     if st.button("Run Predictive Analysis"):
