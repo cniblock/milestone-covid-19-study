@@ -36,6 +36,7 @@ def get_user_input():
     obesity = st.selectbox("Obesity", ["Yes", "No"])
     renal_chronic = st.selectbox("Chronic Renal Disease", ["Yes", "No"])
     tobacco = st.selectbox("Tobacco Use", ["Yes", "No"])
+    icu = st.selectbox("ICU", ["Yes", "No"])
 
     input_data = pd.DataFrame({
         'AGE': [age],
@@ -51,7 +52,8 @@ def get_user_input():
         'CARDIOVASCULAR': [1 if cardiovascular == "Yes" else 0],
         'OBESITY': [1 if obesity == "Yes" else 0],
         'RENAL_CHRONIC': [1 if renal_chronic == "Yes" else 0],
-        'TOBACCO': [1 if tobacco == "Yes" else 0]
+        'TOBACCO': [1 if tobacco == "Yes" else 0],
+        'ICU': [1 if icu == "Yes" else 0]
     }, index=[0])
 
     return input_data
