@@ -11,7 +11,7 @@ def page_patient_prediction_body():
 
     if st.button("Run Predictive Analysis"):
         try:
-            model_path = 'outputs/ml_pipeline/predict_died/v1/clf_pipeline_model.pkl'
+            model_path = 'outputs/ml_pipeline/predict_severity/v1/regressor_pipeline.pkl'
             model_pipeline = load_pipeline(model_path)
             st.write("Input data shape:", input_data.shape)
             st.write("Input data columns:", input_data.columns.tolist())
