@@ -22,37 +22,13 @@ def page_patient_prediction_body():
 def get_user_input():
     st.header("Patient Risk Prediction")
     age = st.number_input("Age", min_value=0, max_value=120, value=30)
-    sex = st.selectbox("Sex", ["Male", "Female"])
     pneumonia = st.selectbox("Pneumonia", ["Yes", "No"])
-    intubed = st.selectbox("Intubed", ["Yes", "No"])
     hypertension = st.selectbox("Hypertension", ["Yes", "No"])
-    diabetes = st.selectbox("Diabetes", ["Yes", "No"])
-    copd = st.selectbox("COPD", ["Yes", "No"])
-    asthma = st.selectbox("Asthma", ["Yes", "No"])
-    inmsupr = st.selectbox("Immunosuppressed", ["Yes", "No"])
-    other_disease = st.selectbox("Other Diseases", ["Yes", "No"])
-    cardiovascular = st.selectbox("Cardiovascular Disease", ["Yes", "No"])
-    obesity = st.selectbox("Obesity", ["Yes", "No"])
-    renal_chronic = st.selectbox("Chronic Renal Disease", ["Yes", "No"])
-    tobacco = st.selectbox("Tobacco Use", ["Yes", "No"])
-    icu = st.selectbox("ICU", ["Yes", "No"])
 
     input_data = pd.DataFrame({
         'AGE': [age],
-        'SEX': [1 if sex == "Male" else 0],
         'PNEUMONIA': [1 if pneumonia == "Yes" else 0],
-        'INTUBED': [1 if intubed == "Yes" else 0],
-        'HIPERTENSION': [1 if hypertension == "Yes" else 0],
-        'DIABETES': [1 if diabetes == "Yes" else 0],
-        'COPD': [1 if copd == "Yes" else 0],
-        'ASTHMA': [1 if asthma == "Yes" else 0],
-        'INMSUPR': [1 if inmsupr == "Yes" else 0],
-        'OTHER_DISEASE': [1 if other_disease == "Yes" else 0],
-        'CARDIOVASCULAR': [1 if cardiovascular == "Yes" else 0],
-        'OBESITY': [1 if obesity == "Yes" else 0],
-        'RENAL_CHRONIC': [1 if renal_chronic == "Yes" else 0],
-        'TOBACCO': [1 if tobacco == "Yes" else 0],
-        'ICU': [1 if icu == "Yes" else 0]
-    }, index=[0])
+        'HIPERTENSION': [1 if hypertension == "Yes" else 0]
+    })
 
     return input_data
