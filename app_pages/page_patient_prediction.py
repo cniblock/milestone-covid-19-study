@@ -31,7 +31,18 @@ def get_user_input():
         'AGE': [age],
         'PNEUMONIA': [1 if pneumonia == "Yes" else 0],
         'INTUBED': [1 if intubed == "Yes" else 0],
-        'ICU': [1 if icu == "Yes" else 0]
+        'ICU': [1 if icu == "Yes" else 0],
+        'SEX': [0],
+        'DIABETES': [0],
+        'COPD': [0],
+        'ASTHMA': [0],
+        'INMSUPR': [0],
+        'HIPERTENSION': [0],
+        'OTHER_DISEASE': [0],
+        'CARDIOVASCULAR': [0],
+        'OBESITY': [0],
+        'RENAL_CHRONIC': [0],
+        'TOBACCO': [0]
     })
 
     return input_data
