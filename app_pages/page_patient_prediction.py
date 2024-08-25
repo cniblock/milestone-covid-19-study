@@ -21,14 +21,17 @@ def page_patient_prediction_body():
 
 def get_user_input():
     st.header("Patient Risk Prediction")
+    
     age = st.number_input("Age", min_value=0, max_value=120, value=30)
     pneumonia = st.selectbox("Pneumonia", ["Yes", "No"])
-    hypertension = st.selectbox("Hypertension", ["Yes", "No"])
+    intubed = st.selectbox("Intubed", ["Yes", "No"])
+    icu = st.selectbox("ICU", ["Yes", "No"])
 
     input_data = pd.DataFrame({
         'AGE': [age],
         'PNEUMONIA': [1 if pneumonia == "Yes" else 0],
-        'HIPERTENSION': [1 if hypertension == "Yes" else 0]
+        'INTUBED': [1 if intubed == "Yes" else 0],
+        'ICU': [1 if icu == "Yes" else 0]
     })
 
     return input_data
