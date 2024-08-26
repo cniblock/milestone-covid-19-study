@@ -8,8 +8,10 @@ def page_model_evaluation_body():
     version = 'v1'
     risk_pipe = load_pkl_file(
         f"outputs/ml_pipeline/predict_severity/{version}/regressor_pipeline.pkl")
-    risk_feat_importance = plt.imread(
-        f"outputs/ml_pipeline/predict_severity/{version}/features_importance.png")
+    risk_feat_importance_1 = plt.imread(
+        f"outputs/ml_pipeline/predict_severity/{version}/features_importance_1.png")
+    risk_feat_importance_2 = plt.imread(
+        f"outputs/ml_pipeline/predict_severity/{version}/features_importance_2.png")
     X_train = pd.read_csv(
         f"outputs/ml_pipeline/predict_severity/{version}/X_train.csv")
     X_test = pd.read_csv(
@@ -39,7 +41,8 @@ def page_model_evaluation_body():
 
     st.write("* Features used for training the model and their importance.")
     st.write(X_train.columns.to_list())
-    st.image(risk_feat_importance)
+    st.image(risk_feat_importance_1)
+    st.image(risk_feat_importance_2)
     st.write("---")
 
     st.write("### Pipeline Performance")
