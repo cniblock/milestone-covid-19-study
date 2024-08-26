@@ -9,15 +9,17 @@ def page_model_evaluation_body():
     risk_pipe = load_pkl_file(
         f"outputs/ml_pipeline/predict_severity/{version}/regressor_pipeline.pkl")
     risk_feat_importance = plt.imread(
-        f"outputs/ml_pipeline/predict_died/{version}/features_importance.png")
+        f"outputs/ml_pipeline/predict_severity/{version}/features_importance.png")
     X_train = pd.read_csv(
-        f"outputs/ml_pipeline/predict_died/{version}/X_train.csv")
+        f"outputs/ml_pipeline/predict_severity/{version}/X_train.csv")
     X_test = pd.read_csv(
-        f"outputs/ml_pipeline/predict_died/{version}/X_test.csv")
+        f"outputs/ml_pipeline/predict_severity/{version}/X_test.csv")
     y_train = pd.read_csv(
-        f"outputs/ml_pipeline/predict_died/{version}/y_train.csv")
+        f"outputs/ml_pipeline/predict_severity/{version}/y_train.csv")
     y_test = pd.read_csv(
-        f"outputs/ml_pipeline/predict_died/{version}/y_test.csv")
+        f"outputs/ml_pipeline/predict_severity/{version}/y_test.csv")
+    risk_labels_map = load_pkl_file(
+        f"outputs/ml_pipeline/predict_severity/{version}/label_map.pkl")
 
     st.write("### ML Pipeline: Predict COVID-19 Risk")
     

@@ -11,7 +11,7 @@ sns.set_style("whitegrid")
 def page_risk_analysis_body():
     df = load_covid_data()
 
-    vars_to_study = ['AGE', 'INTUBED', 'PNEUMONIA', 'DIABETES', 'HIPERTENSION']
+    vars_to_study = ['AGE', 'INTUBED', 'PNEUMONIA', 'ICU',  'DIABETES', 'HIPERTENSION']
 
     st.write("### COVID-19 Risk Analysis")
     st.info(
@@ -35,12 +35,13 @@ def page_risk_analysis_body():
     )
 
     st.info(
-        f"Insights from the correlation study suggest:\n"
-        f"* Older age groups are more likely to experience severe outcomes.\n"
-        f"* Patients who are not intubated have a higher risk of severe illness or death.\n"
-        f"* The presence of pneumonia is a strong indicator of severe outcomes.\n"
-        f"* Conditions like hypertension and diabetes are associated with increased risk.\n"
-    )
+    f"Insights from the correlation study suggest:\n"
+    f"* Older age groups are more likely to experience severe outcomes.\n"
+    f"* Patients who are not intubated have a higher risk of severe illness or death.\n"
+    f"* The presence of pneumonia is a strong indicator of severe outcomes.\n"
+    f"* Conditions like hypertension and diabetes are associated with increased risk.\n"
+    f"* Admission to the ICU is often necessary for patients with severe disease progression and is a marker of high risk.\n"
+)
 
     df_eda = df.filter(vars_to_study + ['DIED'])
 
@@ -97,7 +98,7 @@ def parallel_plot_risk(df_eda):
 
     fig = px.parallel_categories(
         df_parallel,
-        dimensions=['AGE', 'INTUBED', 'PNEUMONIA', 'DIABETES', 'HIPERTENSION', 'DIED_Status_Num'],
+        dimensions=['AGE', 'INTUBED', 'PNEUMONIA', 'ICU', 'DIABETES', 'HIPERTENSION', 'DIED_Status_Num'],
         color="DIED_Status_Num",
         color_continuous_scale=px.colors.sequential.Inferno
     )

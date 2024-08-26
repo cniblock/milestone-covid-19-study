@@ -16,12 +16,15 @@ def page_patient_prediction_body():
             
             if prediction < 0.33:
                 risk_level = "Low Risk"
+                risk_color = "green"
             elif prediction < 0.66:
                 risk_level = "Medium Risk"
+                risk_color = "orange"
             else:
                 risk_level = "High Risk"
+                risk_color = "red"
             
-            st.write(f"Predicted Risk Level: {risk_level} ({prediction})")
+            st.markdown(f"**Predicted Risk Level:** <span style='color:{risk_color};'>{risk_level} ({prediction:.2f})</span>", unsafe_allow_html=True)
         except Exception as e:
             st.error(f"An error occurred during prediction: {str(e)}")
 
