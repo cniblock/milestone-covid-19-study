@@ -1,13 +1,14 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-from src.data_management import load_covid_data, load_pkl_file
+from src.data_management import load_pkl_file
 from src.machine_learning.evaluate_clf import clf_performance
+
 
 def page_model_evaluation_body():
     version = 'v1'
     risk_pipe = load_pkl_file(
-        f"outputs/ml_pipeline/predict_severity/{version}/regressor_pipeline.pkl")
+        f"outputs/ml_pipeline/predict_severity/{version}/clf_pipeline.pkl")
     risk_feat_importance_1 = plt.imread(
         f"outputs/ml_pipeline/predict_severity/{version}/features_importance_1.png")
     risk_feat_importance_2 = plt.imread(
@@ -24,7 +25,7 @@ def page_model_evaluation_body():
         f"outputs/ml_pipeline/predict_severity/{version}/label_map.pkl")
 
     st.write("### ML Pipeline: Predict COVID-19 Risk")
-    
+
     st.info(
         f"* The goal was to build a predictive model that could estimate the risk level of a COVID-19 patient "
         f"based on their health conditions and symptoms. The model's performance on the training and test sets "
@@ -39,7 +40,7 @@ def page_model_evaluation_body():
     st.write(risk_pipe)
     st.write("---")
 
-    st.write("* Features used for training the model and their importance.")
+    st.write("* The features the model was trained on and their importance.")
     st.write(X_train.columns.to_list())
     st.image(risk_feat_importance_1)
     st.image(risk_feat_importance_2)
