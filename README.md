@@ -190,4 +190,4 @@ The model provides healthcare professionals with insights into the risk levels o
 
 - **Mentor**: A special thank you to my mentor Precious Ljege who provided guidance and feedback throughout the project.
 
-- **Online Communities**: I would also like to acknowledge the help from various online communities, including Slack, Stack Overflow and Code Institute alumni, for providing answers and solutions to challenges encountered during the development of this project.
+- **Online Communities**: I would also like to acknowledge the help from various online communities, including Slack, Stack Overflow and Code Institute alumni, for providing answers and solutions to challenges encountered during the development and deployment of this project.
