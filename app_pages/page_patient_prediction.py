@@ -11,7 +11,8 @@ def page_patient_prediction_body():
     model_pipeline_reg = load_pipeline(model_path_reg)
 
     input_data = get_user_input()
-    st.write("Input Data:", input_data)
+    st.write("### Input Data:")
+    st.write(input_data)
 
     if st.button("Run Predictive Analysis"):
         try:
@@ -27,11 +28,14 @@ def page_patient_prediction_body():
                 risk_level_reg = "High Risk"
                 risk_color_reg = "red"
 
-            st.markdown(f"**Predicted Risk Level:** <span style='color:{risk_color_reg};'>{risk_level_reg} ({reg_prediction:.2f})</span>", unsafe_allow_html=True)
+            st.markdown(
+                f"**Predicted Risk Level:** <span style='color:{risk_color_reg};'>{risk_level_reg} ({reg_prediction:.2f})</span>", 
+                unsafe_allow_html=True
+            )
+            st.info("Interpretation: Based on the predicted risk level, consult with healthcare professionals for further guidance.")
 
         except Exception as e:
             st.error(f"An error occurred during prediction: {str(e)}")
-
 
 def get_user_input():
     st.header("Patient Risk Prediction")
@@ -52,21 +56,21 @@ def get_user_input():
     asthma = st.selectbox("Asthma", ["Yes", "No"], index=1)
 
     input_data = pd.DataFrame({
-    'AGE': [age],
-    'INTUBED': [0 if intubed == "Yes" else 1],
-    'HIPERTENSION': [0 if hypertension == "Yes" else 1],
-    'DIABETES': [0 if diabetes == "Yes" else 1],
-    'OBESITY': [0 if obesity == "Yes" else 1],
-    'OTHER_DISEASE': [0 if other_disease == "Yes" else 1],
-    'ICU': [0 if icu == "Yes" else 1],
-    'PNEUMONIA': [0 if pneumonia == "Yes" else 1],
-    'CARDIOVASCULAR': [0 if cardiovascular == "Yes" else 1],
-    'INMSUPR': [0 if inmsupr == "Yes" else 1],
-    'RENAL_CHRONIC': [0 if renal_chronic == "Yes" else 1],
-    'TOBACCO': [0 if tobacco == "Yes" else 1],
-    'COPD': [0 if copd == "Yes" else 1],
-    'ASTHMA': [0 if asthma == "Yes" else 1],
-    'SEX': [0]
-})
+        'AGE': [age],
+        'INTUBED': [0 if intubed == "Yes" else 1],
+        'HIPERTENSION': [0 if hypertension == "Yes" else 1],
+        'DIABETES': [0 if diabetes == "Yes" else 1],
+        'OBESITY': [0 if obesity == "Yes" else 1],
+        'OTHER_DISEASE': [0 if other_disease == "Yes" else 1],
+        'ICU': [0 if icu == "Yes" else 1],
+        'PNEUMONIA': [0 if pneumonia == "Yes" else 1],
+        'CARDIOVASCULAR': [0 if cardiovascular == "Yes" else 1],
+        'INMSUPR': [0 if inmsupr == "Yes" else 1],
+        'RENAL_CHRONIC': [0 if renal_chronic == "Yes" else 1],
+        'TOBACCO': [0 if tobacco == "Yes" else 1],
+        'COPD': [0 if copd == "Yes" else 1],
+        'ASTHMA': [0 if asthma == "Yes" else 1],
+        'SEX': [0]
+    })
 
     return input_data

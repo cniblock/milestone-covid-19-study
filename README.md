@@ -159,7 +159,20 @@ The model provides healthcare professionals with insights into the risk levels o
 
 ## Main Data Analysis and Machine Learning Libraries
 
-* Here you should list the libraries you used in the project and provide example(s) of how you used these libraries.
+* **Pandas**: This library was used extensively for data manipulation and analysis, including tasks such as loading datasets, handling missing data, and performing DataFrame operations.
+
+* **NumPy**: NumPy was utilized for various numerical computing tasks, providing support for array manipulations, mathematical operations, and efficient handling of numerical data.
+
+* **Matplotlib & Seaborn**: These libraries were employed for data visualization, enabling the creation of plots, histograms, and heatmaps to help understand data distributions and relationships.
+
+* **Scikit-Learn**: Scikit-Learn was leveraged for a range of machine learning tasks, including data preprocessing, model training, and evaluation. It provided tools for splitting data, applying machine learning algorithms, and assessing model performance.
+
+* **XGBoost**: XGBoost was applied to build high-performance gradient boosting models, particularly suited for handling structured data in predictive modeling tasks.
+
+* **Streamlit**: Streamlit was used to develop an interactive web application for the project, allowing users to input data and receive predictions based on the trained models.
+
+* **Feature-Engine**: Utilized for feature engineering tasks, such as encoding categorical variables, handling outliers, and selecting important features.
+
 
 ## Credits
 
