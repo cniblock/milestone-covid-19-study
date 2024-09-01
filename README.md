@@ -140,7 +140,7 @@ The model provides healthcare professionals with insights into the risk levels o
 
 ## Unfixed Bugs
 
-* On the prediction model, AGE does not seem to make as much of an impact of patient severity as expected. Other than that, everything is functioning as expected and no significant issues were encountered.
+* On the prediction model, AGE does not seem to make as much of an impact of patient severity as expected. Addressing this would require further investigation, possibly involving more sophisticated feature engineering or alternative modeling approaches.Other than that, everything is functioning as expected and no significant issues were encountered.
 
 ## Deployment
 
@@ -181,17 +181,16 @@ The model provides healthcare professionals with insights into the risk levels o
 
 ### Content
 
-* The text for the Home page was taken from Wikipedia Article A
-* Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-* The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
+- **Dataset**: The COVID-19 dataset used in this project was sourced from a public repository provided by the Mexican government and hosted on Kaggle. The dataset includes anonymized patient-related information such as pre-existing conditions, symptoms, and outcomes related to COVID-19.
 
 ### Media
 
-* The photos used on the home and sign-up page are from This Open Source site
-* The images used for the gallery page were taken from this other open-source site
+* The image used as a header on the README was taken from: ![COVID-19 Pandemic](https://www.paho.org/sites/default/files/styles/max_1500x1500/public/2023-04/covid-19-pandemic.jpg)
+
+- **Streamlit App Layout Inspiration**: The layout and design of the Streamlit app were influenced by Code Institutes Walkthrough project.
 
 ## Acknowledgements (optional)
 
+- **Mentor**: A special thank you to my mentor Precious Ljege who provided guidance and feedback throughout the project.
 
-* In case you would like to thank the people that provided support through this project.
-
+- **Online Communities**: I would also like to acknowledge the help from various online communities, including Slack, Stack Overflow and Code Institute alumni, for providing answers and solutions to challenges encountered during the development of this project.
