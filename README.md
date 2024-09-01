@@ -176,16 +176,13 @@ The model provides healthcare professionals with insights into the risk levels o
 
 ## Credits
 
-* In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism.
-* You can break the credits section up into Content and Media, depending on what you have included in your project.
-
 ### Content
 
 - **Dataset**: The COVID-19 dataset used in this project was sourced from a public repository provided by the Mexican government and hosted on Kaggle. The dataset includes anonymized patient-related information such as pre-existing conditions, symptoms, and outcomes related to COVID-19.
 
 ### Media
 
-* The image used as a header on the README was taken from: ![COVID-19 Pandemic](https://www.paho.org/sites/default/files/styles/max_1500x1500/public/2023-04/covid-19-pandemic.jpg)
+* The image used as a header on the README was taken from: ![COVID-19 Pandemic](https://www.paho.org/en/topics/coronavirus-infections/coronavirus-disease-covid-19-pandemic)
 
 - **Streamlit App Layout Inspiration**: The layout and design of the Streamlit app were influenced by Code Institutes Walkthrough project.
 
