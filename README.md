@@ -2,6 +2,8 @@
 
 ![COVID Banner](banner-coronavirus_0.webp)
 
+### [LIVE PROJECT](https://fierce-bayou-24270-f47280ad3e23.herokuapp.com/)
+
 ## Dataset Content
 
 The dataset is sourced from a public repository provided by the Mexican government and hosted on [Kaggle](https://www.kaggle.com/datasets/meirnizri/covid19-dataset). The original dataset contains anonymized patient-related information, including pre-existing conditions, symptoms, and outcomes related to COVID-19.
@@ -146,16 +148,15 @@ The model provides healthcare professionals with insights into the risk levels o
 
 ### Heroku
 
-* The App live link is: <https://YOUR_APP_NAME.herokuapp.com/>
+* The App live link is: <https://fierce-bayou-24270-f47280ad3e23.herokuapp.com>
 * Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
+* "heroku create --stack heroku-20" and "heroku stack:set heroku-20" was used in IDE.
 * The project was deployed to Heroku using the following steps.
 
 1. Log in to Heroku and create an App
 2. At the Deploy tab, select GitHub as the deployment method.
 3. Select your repository name and click Search. Once it is found, click Connect.
 4. Select the branch you want to deploy, then click Deploy Branch.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button Open App on the top of the page to access your App.
-6. If the slug size is too large then add large files not required for the app to the .slugignore file.
 
 ## Main Data Analysis and Machine Learning Libraries
 
