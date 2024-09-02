@@ -183,7 +183,7 @@ The model provides healthcare professionals with insights into the risk levels o
 
 ### Media
 
-* The image used as a header on the README was taken from: ![COVID-19 Pandemic](https://www.paho.org/en/topics/coronavirus-infections/coronavirus-disease-covid-19-pandemic)
+* The image used as a header on the README was taken from: <https://www.paho.org/en/topics/coronavirus-infections/coronavirus-disease-covid-19-pandemic>
 
 - **Streamlit App Layout Inspiration**: The layout and design of the Streamlit app were influenced by Code Institutes Walkthrough project.
 
