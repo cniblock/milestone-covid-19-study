@@ -113,8 +113,12 @@ The model provides healthcare professionals with insights into the risk levels o
 
 ### Training Data
 
-* Source: The dataset contains over 62,000 (trimmed from over 1 million) patient records sourced from a public repository provided by the Mexican government.
-* Training Data Preparation: The training data is derived from the dataset, excluding the DIED column for features, and using DIED as the target variable.
+* **Source**: The dataset contains over 62,000 (trimmed from over 1 million) patient records sourced from a public repository provided by the Mexican government.
+* **Training Data Preparation**: The training data is derived from the dataset, excluding the DIED column for features and using DIED as the target variable.
+* **Sample Size and Set Breakdown**:
+  - **Total Samples**: 62,000 patient records.
+  - **Train Set**: 80% (49,600 samples).
+  - **Test Set**: 20% (12,400 samples).
 
 ## Dashboard Design (Streamlit App User Interface)
 
