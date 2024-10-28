@@ -120,6 +120,31 @@ The model provides healthcare professionals with insights into the risk levels o
   - **Train Set**: 80% (49,600 samples).
   - **Test Set**: 20% (12,400 samples).
 
+### Model Choices and Limitations
+
+#### Model Selection Rationale
+The models chosen for this project include logistic regression, XGBClassifier, and gradient boosting regressor. These were selected due to their strengths in handling classification and regression tasks effectively, especially in contexts with potentially imbalanced data and complex feature interactions.
+
+- **Logistic Regression**: Useful for binary classification tasks to predict high-risk vs. low-risk categories.
+- **XGBClassifier**: Provides robust performance on imbalanced data, allowing the model to better capture critical cases requiring immediate attention.
+- **GradientBoostingRegressor**: Chosen to produce a continuous risk score, giving a finer understanding of patient severity.
+
+#### Limitations
+While these models have demonstrated adequate predictive capability, some limitations were encountered:
+
+- **Age Impact on Severity Predictions**: Surprisingly, age did not show as strong an impact on severity predictions as initially hypothesized. This could be due to the dataset's focus on specific demographics or a lack of interaction terms that capture age's indirect effects. In future work, exploring non-linear models or adding interaction terms could enhance the model's ability to capture age-related risk.
+  
+- **Model Generalizability**: As the data originates from a specific region (Mexico), model performance may vary if applied to populations with different demographics or healthcare conditions. Future work could involve retraining or fine-tuning the model on datasets from diverse populations to improve generalizability.
+
+#### Future Improvements
+To address these limitations, potential future work could include:
+
+1. **Enhanced Feature Engineering**: Implementing polynomial features or interaction terms to capture complex dependencies, such as between age and specific health conditions.
+2. **Expanded Model Testing**: Exploring alternative models, like neural networks or ensemble methods, to potentially improve performance on features with weaker correlations.
+3. **Cross-Population Testing**: Validating model predictions on datasets from other regions to assess generalizability across diverse patient populations.
+
+By addressing these areas, the model could become more accurate and widely applicable for predicting COVID-19 severity across different contexts.
+
 ## Dashboard Design (Streamlit App User Interface)
 
 ### Page 1: Quick Project Summary
