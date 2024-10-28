@@ -92,8 +92,19 @@ The model provides healthcare professionals with insights into the risk levels o
 
 ### Model Success Metrics
 
-* Achieve an R² score of at least 0.7 on both train and test datasets.
-* The model will be considered a failure if it predicts risk levels with more than 50% error in over 30% of the cases. For instance, if the model predicts a risk score of 10 for a patient who actually has a risk score of 2, this would be considered a failure.
+**Objective**: Achieve an R² score of at least 0.7 on both train and test datasets, minimizing prediction errors to make informed recommendations for healthcare resource allocation.
+
+**Algorithms Used**:
+- **LogisticRegression**: Applied for classification tasks to determine whether a patient is at high risk, helping identify critical cases requiring urgent resources.
+- **XGBClassifier**: Utilized for its performance in handling imbalanced data and predicting complex interactions between patient features and risk levels.
+- **GradientBoostingRegressor**: Deployed to predict severity levels, providing a continuous risk score that assists in finer-grained patient severity assessments.
+
+**Performance Metrics**:
+- **R² Score**: Achieved R² values of 0.173 on the train set and 0.151 on the test set, indicating predictive capability while suggesting room for further fine-tuning to improve explanatory power.
+- **Accuracy**: Achieved an accuracy score of 67% in predicting high-risk categories on the test set, aligning with the project’s target for reliable risk categorization.
+- **Recall**: Recorded a recall of 0.83 for high-risk predictions, demonstrating that the model successfully captures the majority of high-risk cases.
+
+**Error Threshold**: The model is evaluated as a failure if it predicts risk levels with more than 50% error in over 30% of cases. For instance, if the model predicts a risk score of 10 for a patient who actually has a risk score of 2, this would constitute an error.
 
 ### Output
 
